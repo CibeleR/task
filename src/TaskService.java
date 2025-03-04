@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,6 +18,39 @@ public class TaskService {
 			System.out.println(task);
 		}
 		return tasks;
+	}
+	
+	public Task novaTarefa() {
+		Integer id = 0;
+		
+		try {
+			System.out.println();
+			System.out.println("Digite um NÚMERO INTEIRO");
+			System.out.print("Id: ");
+			id = sc.nextInt();
+							
+			for(Task task : tasks) {
+				if(task.getId() == id) {
+				System.out.println("ID já existente.");
+				System.out.println("Id: ");
+				id = sc.nextInt();
+				}
+			}
+		}
+		catch(InputMismatchException e) {
+			throw new InputMismatchException("Valor inválido.");
+		}
+						
+		System.out.print("Tarefa: ");
+		sc.nextLine();
+		String tarefa = sc.nextLine();
+		System.out.print("Responsável: ");
+		String responsável = sc.nextLine();
+							
+		Task novaTarefa = new Task(id, tarefa, responsável, status);
+		tasks.add(novaTarefa);
+		
+		return novaTarefa;
 	}
 	
 }

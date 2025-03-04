@@ -28,6 +28,10 @@ public class Application {
 			System.out.print("Digite o ID da ação: ");
 			menu = sc.nextInt();
 			
+			if(menu == 1) {
+				taskService.novaTarefa();
+			}
+			
 		}
 		sc.close();
 		
