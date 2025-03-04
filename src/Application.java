@@ -5,6 +5,7 @@ public class Application {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
+		TaskService taskService = new TaskService();
 		
 		int menu = 0;
 		
@@ -13,6 +14,7 @@ public class Application {
 			System.out.println();
 			System.out.println("-----------------------------------------");
 			System.out.println("TAREFAS");
+			taskService.getTasks();
 			
 			System.out.println();
 			System.out.println("Menu:");
@@ -25,7 +27,6 @@ public class Application {
 			System.out.println("O que você deseja fazer?");
 			System.out.print("Digite o ID da ação: ");
 			menu = sc.nextInt();
-			
 			
 		}
 		sc.close();
