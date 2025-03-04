@@ -53,4 +53,23 @@ public class TaskService {
 		return novaTarefa;
 	}
 	
+	public String deletarTarefa(int id) {
+		String resultado = null;
+		try {
+			for(Task task : tasks) {
+				if (task.getId().equals(id)) {
+					tasks.remove(task);
+					resultado = "Tarefa deletada.";
+				}
+				else {
+					resultado =  "valor inválido.";
+				}
+			}
+		}
+		catch(RuntimeException e) {
+			resultado = "Valor inválido.";
+		}
+		return resultado;
+	}
+	
 }

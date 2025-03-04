@@ -32,6 +32,12 @@ public class Application {
 				taskService.novaTarefa();
 			}
 			
+			if(menu == 2) {
+				System.out.print("Id da tarefa a ser deletada: ");
+				int id = sc.nextInt();
+				taskService.deletarTarefa(id);
+			}
+			
 		}
 		sc.close();
 		
