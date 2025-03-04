@@ -72,4 +72,16 @@ public class TaskService {
 		return resultado;
 	}
 	
+	public List<Task> listarTarefas() {
+		System.out.println();
+		System.out.print("Nome do funcionário: ");
+		String nome = sc.next();
+		for(Task task : tasks) {
+			if (task.getResponsável().equals(nome)) {
+				System.out.println(task);
+			}
+		}
+		return tasks;
+	}
+	
 }

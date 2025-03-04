@@ -38,6 +38,9 @@ public class Application {
 				taskService.deletarTarefa(id);
 			}
 			
+			if(menu == 3) {
+				taskService.listarTarefas();
+			}
 		}
 		sc.close();
 		
