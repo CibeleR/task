@@ -41,8 +41,11 @@ public class Application {
 			if(menu == 3) {
 				taskService.listarTarefas();
 			}
+			
+			if(menu == 4) {
+				taskService.atualizarStatus();
+			}
 		}
 		sc.close();
-		
 	}
 }
